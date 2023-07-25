@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Development December Major Project</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    
+  </head>
+<body>
+  <div class="container" id="containers">
+    <div class="col-lg-8 m-auto d-xxl-none p-5 bg-body-secondary">
+      <form action="#" onsubmit="return validation()">
+      <div class="form-group">
+        <label> User Name: </label>
+        <input type="text" name="User" class="form-control" id="user">
+        <span id="username" class="text-danger"></span>
+      </div>
+
+      <div class="form-group">
+        <label> Email: </label>
+        <input type="text" name="email" class="form-control" id="email">
+        <span id="emails" class="text-danger"></span>
+      </div>
+
+      <div class="form-group">
+        <label> Age: </label>
+        <input type="number" name="age" class="form-control" id="age">
+        <span id="ages" class="text-danger"></span>
+      </div>
+
+      <div class="form-group">
+        <label> Phone number: </label>
+        <input type="number" name="phone number" class="form-control" id="phone number">
+        <span id="mobile" class="text-danger"></span>
+      </div>
+
+      <input type="submit" name="submit" value="submit" class="btn btn-success m-3" >
+      <input type="Reset" name="Reset" value="reset" class="btn btn-warning " >
+      </form>
+    </div>
+  </div>
+  <script type="text/javascript">
+    function validation(){
+      var user=document.getElementById('user').value;
+      var email=document.getElementById('email').value;
+      var age=document.getElementById('age').value;
+      var phonenumber=document.getElementById('phone number').value;
+
+      if(user==''){
+        document.getElementById('username').innerHTML="**filed should not be empty";
+        return false;
+      }
+      if((user.length <=2) || (user.length >20)){
+        document.getElementById('username').innerHTML="**username length must be between 2-20 characters only";
+        return false;
+
+      }
+      if(!user.match(/^[A-Za-z]*$/)){
+        document.getElementById('username').innerHTML="**username must be characters only not digits";
+        return false;
+
+      }
+     
+      if(email==''){
+        document.getElementById('emails').innerHTML="please enter the email filed";
+        return false;
+
+      }
+      if(!email.match(/^[A-Za-z\._\-[0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)){
+        document.getElementById('emails').innerHTML="**Invalid email";
+        return false;
+
+
+      }
+      
+
+      if(age==''){
+        document.getElementById('ages').innerHTML="please enter the age filed";
+        return false;
+
+      }
+      if(age.length==4){
+        document.getElementById('ages').innerHTML="age must be less than 3 digits only";
+        return false;
+
+
+      }
+      if(phonenumber==''){
+        document.getElementById('mobile').innerHTML="please enter the phone number filed";
+        return false;
+
+      }
+     
+      if(phonenumber.length !==10){
+        document.getElementById('mobile').innerHTML="**phonenumber must be 10 digits only";
+        return false;
+      }
+
+
+    }
+
+  </script>
+  
+   
+    
+</body>
+</html>
